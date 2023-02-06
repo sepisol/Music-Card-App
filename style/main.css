@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/image/backgrond.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 2.5rem;
+}
+
+.container {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 11px 13px rgba(0, 0, 0, 0.5);
+}
+.container:hover .cover .photo:last-child {
+  transform: rotateY(-50deg);
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.35);
+}
+.container:hover .actions {
+  transition: z-index 0.2s 0.2s;
+  z-index: 10;
+}
+.container .actions {
+  position: relative;
+  float: right;
+  border-radius: 6px;
+  z-index: 0;
+}
+.container .actions img {
+  display: block;
+  cursor: pointer;
+  opacity: 0.65;
+  width: 30px;
+  margin: 1.2rem 1.1rem 2.2rem 0;
+  transition: opacity 0.1s;
+}
+.container .actions img:hover {
+  opacity: 1;
+}
+.container .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 1900px;
+  z-index: 1;
+  display: flex;
+}
+.container .cover .photo {
+  background: url("../image/kanye.jpg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.container .cover .photo:first-child {
+  border-radius: 6px 0 0 6px;
+  background-position: 12% 0;
+}
+.container .cover .photo:last-child {
+  border-radius: 0 6px 6px 0;
+  background-position: 90% 0;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 570px) {
+  .container {
+    height: 0;
+    padding-bottom: 100%;
+  }
+  .actions img {
+    width: 20px;
+    margin: 0.9rem 0.8rem 1.6rem 0;
+  }
+} /*# sourceMappingURL=main.css.map */
